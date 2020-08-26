@@ -3,13 +3,13 @@ using Commander.Models;
 
 namespace Commander.Data
 {
-    public class MockCommanderRepo : ICommanderRepo
+    public class MockCommanderRepo : ICommanderRepoMock
     {
         public MockCommanderRepo()
         {
         }
 
-        public IEnumerable<Command> GetAppCommands()
+        public IEnumerable<Command> GetAllCommandsMock()
         {
             List<Command> commands = new List<Command>
             {
@@ -21,7 +21,7 @@ namespace Commander.Data
             return commands;
         }
 
-        public Command GetCommandById(int id)
+        public Command GetCommandByIdMock(int id)
         {
             return new Command { Id = 0, HowTo = "Boil a Egg", Line = "Boil -w -e -s", Platform = "Kitchen" };
         }
